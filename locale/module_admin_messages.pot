@@ -1,0 +1,311 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zikula component\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-07 04:33-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: pnadmin.php:98
+msgid "Done! Created administrator message."
+msgstr ""
+
+#: pnadmin.php:131 pnadmin.php:225
+msgid "Sorry! No such administrator message found."
+msgstr ""
+
+#: pnadmin.php:187
+msgid "Done! Saved administrator message."
+msgstr ""
+
+#: pnadmin.php:258
+msgid "Done! Deleted administrator message."
+msgstr ""
+
+#: pnadmin.php:304
+msgid "All"
+msgstr ""
+
+#: pnadmin.php:309 pnadmin.php:312 pntemplates/admin_messages_admin_new.htm:48
+#: pntemplates/admin_messages_admin_modify.htm:61
+#: pntemplates/admin_messages_admin_modify.htm:63
+msgid "All visitors"
+msgstr ""
+
+#: pnadmin.php:315 pntemplates/admin_messages_admin_new.htm:49
+#: pntemplates/admin_messages_admin_modify.htm:66
+#: pntemplates/admin_messages_admin_modify.htm:68
+msgid "Registered users only"
+msgstr ""
+
+#: pnadmin.php:318 pntemplates/admin_messages_admin_new.htm:50
+#: pntemplates/admin_messages_admin_modify.htm:71
+#: pntemplates/admin_messages_admin_modify.htm:73
+msgid "Anonymous guests only"
+msgstr ""
+
+#: pnadmin.php:321 pntemplates/admin_messages_admin_new.htm:51
+#: pntemplates/admin_messages_admin_modify.htm:76
+#: pntemplates/admin_messages_admin_modify.htm:78
+msgid "Administrators only"
+msgstr ""
+
+#: pnadmin.php:327 pntemplates/admin_messages_admin_new.htm:32
+#: pntemplates/admin_messages_admin_modify.htm:35
+#: pntemplates/admin_messages_admin_modify.htm:44
+msgid "Yes"
+msgstr ""
+
+#: pnadmin.php:329 pntemplates/admin_messages_admin_new.htm:34
+#: pntemplates/admin_messages_admin_modify.htm:37
+#: pntemplates/admin_messages_admin_modify.htm:46
+msgid "No"
+msgstr ""
+
+#: pnadmin.php:333
+msgid "Never"
+msgstr ""
+
+#: pnadmin.php:335
+msgid "day"
+msgstr ""
+
+#: pnadmin.php:337
+msgid "days"
+msgstr ""
+
+#: pnadmin.php:341
+msgid "No expiration date"
+msgstr ""
+
+#: pnadmin.php:343
+msgid "%b %d, %Y - %I:%M %p"
+msgstr ""
+
+#: pnadmin.php:353
+msgid "Edit"
+msgstr ""
+
+#: pnadmin.php:357 pntemplates/admin_messages_admin_delete.htm:17
+msgid "Delete"
+msgstr ""
+
+#: pnadmin.php:436
+msgid "Done! Saved module configuration."
+msgstr ""
+
+#: pnuserapi.php:54 pnuserapi.php:152 pnsearchapi.php:83 pnsearchapi.php:108
+msgid "Error! Could not load data."
+msgstr ""
+
+#: pnblocks/messages.php:34
+msgid "Messages"
+msgstr ""
+
+#: pnblocks/messages.php:35
+msgid "Display administrator messages"
+msgstr ""
+
+#: pnversion.php:16
+msgid "Admin messages manager"
+msgstr ""
+
+#: pnversion.php:17
+msgid ""
+"Provides a means of publishing, editing and scheduling special announcements "
+"from the site administrator."
+msgstr ""
+
+#. ! module name that appears in URL
+#: pnversion.php:19
+msgid "adminmessages"
+msgstr ""
+
+#: pnadminapi.php:57
+msgid "Error! Could not create the new item."
+msgstr ""
+
+#: pnadminapi.php:85 pnadminapi.php:140
+msgid "Sorry! No such item found."
+msgstr ""
+
+#: pnadminapi.php:94
+msgid "Error! Could not perform the deletion."
+msgstr ""
+
+#: pnadminapi.php:169
+msgid "Error! Could not save your changes."
+msgstr ""
+
+#: pnadminapi.php:195 pntemplates/admin_messages_admin_view.htm:2
+msgid "Messages list"
+msgstr ""
+
+#: pnadminapi.php:198 pntemplates/admin_messages_admin_new.htm:2
+msgid "Create new message"
+msgstr ""
+
+#: pnadminapi.php:201 pntemplates/admin_messages_admin_modifyconfig.htm:2
+msgid "Settings"
+msgstr ""
+
+#: pninit.php:96
+msgid "This site is powered by Zikula!"
+msgstr ""
+
+#: pninit.php:97
+msgid ""
+"<p><a href=\"http://www.zikula.org\">Zikula</a> is a content management "
+"system (CMS) and application framework. It is secure and stable, and is a "
+"good choice for sites with a large volume of traffic.</p><p>With Zikula:</"
+"p><ul><li>you can customise all aspects of the site's appearance through "
+"themes, with support for CSS style sheets, JavaScript, Flash and all other "
+"modern web development technologies;</li><li>you can mark content as being "
+"suitable for either a single language or for all languages, and can control "
+"all aspects of localisation and internationalisation of your site and pages;"
+"</li><li>you can be sure that your pages will display properly in all "
+"browsers, thanks to Zikula's full compliance with W3C HTML standards;</"
+"li><li>you get a standard application-programming interface (API) that lets "
+"you easily augment your site's functionality through modules, blocks and "
+"other extensions;</li><li>you can get help and support from the Zikula "
+"community of webmasters and developers at <a href=\"http://www.zikula.org"
+"\">zikula.org</a>.</li></ul><p>Enjoy using Zikula!</p><p><strong>The Zikula "
+"team</strong></p><p><em>Note: Zikula is Free Open Source Software (FOSS) "
+"licensed under the GNU General Public License.</em></p>"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:12
+msgid "New message"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:14
+#: pntemplates/admin_messages_admin_view.htm:12
+#: pntemplates/admin_messages_admin_modify.htm:17
+msgid "Title"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:20
+#: pntemplates/admin_messages_admin_view.htm:13
+#: pntemplates/admin_messages_admin_modify.htm:23
+msgid "Language"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:25
+#: pntemplates/admin_messages_admin_modify.htm:28
+msgid "Content"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:29
+#: pntemplates/admin_messages_admin_view.htm:15
+#: pntemplates/admin_messages_admin_modify.htm:32
+msgid "Active"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:38
+#: pntemplates/admin_messages_admin_view.htm:16
+#: pntemplates/admin_messages_admin_modify.htm:50
+msgid "Expiration"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:41
+#: pntemplates/admin_messages_admin_modify.htm:53
+msgid "days (0 = never)"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:45
+#: pntemplates/admin_messages_admin_view.htm:14
+#: pntemplates/admin_messages_admin_modify.htm:57
+msgid "Visibility"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:58
+#: pntemplates/admin_messages_admin_modify.htm:86
+#: pntemplates/admin_messages_admin_modifyconfig.htm:24
+msgid "Save"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_new.htm:59
+#: pntemplates/admin_messages_admin_modify.htm:87
+#: pntemplates/admin_messages_admin_modifyconfig.htm:25
+#: pntemplates/admin_messages_admin_delete.htm:18
+msgid "Cancel"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_menu.htm:4
+msgid "Admin messages"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_view.htm:11
+msgid "Internal ID"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_view.htm:17
+msgid "Expiration date"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_view.htm:18
+msgid "Actions"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_view.htm:39
+msgid "No items found."
+msgstr ""
+
+#: pntemplates/admin_messages_admin_modify.htm:2
+msgid "admin message"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_modify.htm:3
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_modify.htm:15
+msgid "Message"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_modify.htm:41
+msgid "Reset publication date"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_modifyconfig.htm:12
+msgid "General settings"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_modifyconfig.htm:14
+msgid "Items per page"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_modifyconfig.htm:18
+msgid "Allow searching of inactive messages"
+msgstr ""
+
+#: pntemplates/admin_messages_search_options.htm:4
+msgid "Administrator messages"
+msgstr ""
+
+#: pntemplates/admin_messages_search_options.htm:7
+msgid "Include active messages only"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_delete.htm:2
+msgid "Delete administrator message"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_delete.htm:8
+msgid "Do you really want to delete this administrator message?"
+msgstr ""
+
+#: pntemplates/admin_messages_admin_delete.htm:15
+msgid "Confirmation prompt"
+msgstr ""
