@@ -1,7 +1,7 @@
-<!--[*  $Id$  *]-->
-<!--[section name=messages loop=$messages]-->
+{*  $Id$  *}
+{section name=messages loop=$messages}
 <div class="admin_messages_block">
-    <h2><!--[$messages[messages].title|pnvarprephtmldisplay|pnmodcallhooks:"Admin_Messages"]--></h2>
-    <!--[$messages[messages].content|pnvarprephtmldisplay|pnmodcallhooks:"Admin_Messages"]-->
+    <h2>{$messages[messages].title|safehtml|modcallhooks:"Admin_Messages"}</h2>
+    {$messages[messages].content|safehtml|modcallhooks:"Admin_Messages"}
 </div>
-<!--[/section]-->
+{/section}

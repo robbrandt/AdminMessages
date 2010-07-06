@@ -121,11 +121,11 @@ function Admin_Messages_userapi_getactive($args)
         return $items;
     }
 
-    $pntable = pnDBGetTables();
+    $pntable = DBUtil::getTables();
     $messagescolumn = $pntable['message_column'];
 
     // Check if we're in a multilingual setup
-    if (pnConfigGetVar('multilingual') == 1) {
+    if (System::getVar('multilingual') == 1) {
         $currentlang = ZLanguage::getLanguageCode();
         $querylang = "AND ($messagescolumn[language]='$currentlang' OR $messagescolumn[language]='')";
     } else {

@@ -14,7 +14,7 @@
  * This function is called internally by the core whenever the module is
  * loaded.  It adds in the information
  */
-function Admin_Messages_pntables()
+function Admin_Messages_tables()
 {
     // Initialise table array
     $pntable = array();

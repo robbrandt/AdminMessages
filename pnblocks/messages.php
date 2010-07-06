@@ -18,7 +18,7 @@
 function Admin_Messages_messagesblock_init()
 {
     // Security
-    pnSecAddSchema('Admin_Messages:messagesblock:', 'block title::');
+    SecurityUtil::registerPermissionSchema('Admin_Messages:messagesblock:', 'block title::');
 }
 
 /**
@@ -63,25 +63,25 @@ function Admin_Messages_messagesblock_display($row)
     }
 
     // Check the module is available
-    if (!pnModAvailable('Admin_Messages')) {
+    if (!ModUtil::available('Admin_Messages')) {
         return;
     }
 
     // Create output object
-    $pnRender = & pnRender::getInstance('Admin_Messages');
+    $view = Zikula_View::getInstance('Admin_Messages');
 
     // Define the cacheid
-    $pnRender->cache_id = pnUserGetVar('uid');
+    $view->cache_id = UserUtil::getVar('uid');
 
     // check out if the contents are cached.
-    if ($pnRender->is_cached('admin_messages_block_messages.htm')) {
+    if ($view->is_cached('admin_messages_block_messages.htm')) {
         // Populate block info and pass to theme
-        $row['content'] = $pnRender->fetch('admin_messages_block_messages.htm');
-        return pnBlockThemeBlock($row);
+        $row['content'] = $view->fetch('admin_messages_block_messages.htm');
+        return BlockUtil::themeBlock($row);
     }
 
     // call the api function
-    $messages = pnModAPIFunc('Admin_Messages', 'user', 'getactive');
+    $messages = ModUtil::apiFunc('Admin_Messages', 'user', 'getactive');
 
     if (!$messages)
         $messages = array();
@@ -100,13 +100,13 @@ function Admin_Messages_messagesblock_display($row)
             break;
         case 2:
             // Message for users
-            if (pnUserLoggedIn()) {
+            if (UserUtil::isLoggedIn()) {
                 $show = 1;
             }
             break;
         case 3:
             // Messages for non-users
-            if (!pnUserLoggedIn()) {
+            if (!UserUtil::isLoggedIn()) {
                 $show = 1;
             }
             break;
@@ -125,11 +125,11 @@ function Admin_Messages_messagesblock_display($row)
     // check for an empty result set
     if (empty($messagestodisplay)) return;
 
-    $pnRender->assign('messages', $messagestodisplay);
+    $view->assign('messages', $messagestodisplay);
 
     // Populate block info and pass to theme
-    $row['content'] = $pnRender->fetch('admin_messages_block_messages.htm');
+    $row['content'] = $view->fetch('admin_messages_block_messages.htm');
 
-    return pnBlockThemeBlock($row);
+    return BlockUtil::themeBlock($row);
 
 }

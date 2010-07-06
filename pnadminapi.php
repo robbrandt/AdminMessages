@@ -58,7 +58,7 @@ function Admin_Messages_adminapi_create($args)
     }
 
     // Let any hooks know that we have created a new item.
-    pnModCallHooks('item', 'create', $item['mid'], array('module' => 'Admin_Messages'));
+    ModUtil::callHooks('item', 'create', $item['mid'], array('module' => 'Admin_Messages'));
 
     // Return the id of the newly created item to the calling process
     return $item['mid'];
@@ -79,7 +79,7 @@ function Admin_Messages_adminapi_delete($args)
     }
 
     // Get the existing admin message
-    $item = pnModAPIFunc('Admin_Messages', 'user', 'get', array('mid' => $args['mid']));
+    $item = ModUtil::apiFunc('Admin_Messages', 'user', 'get', array('mid' => $args['mid']));
 
     if ($item == false) {
         return LogUtil::registerError(__('Sorry! No such item found.', $dom));
@@ -95,11 +95,11 @@ function Admin_Messages_adminapi_delete($args)
     }
 
     // Let any hooks know that we have deleted an item.
-    pnModCallHooks('item', 'delete', $args['mid'], array('module' => 'Admin_Messages'));
+    ModUtil::callHooks('item', 'delete', $args['mid'], array('module' => 'Admin_Messages'));
 
     // The item has been modified, so we clear all cached pages of this item.
-    $pnRender = & pnRender::getInstance('Admin_Messages');
-    $pnRender->clear_cache(null, pnUserGetVar('uid'));
+    $view = Zikula_View::getInstance('Admin_Messages');
+    $view->clear_cache(null, UserUtil::getVar('uid'));
 
     // Let the calling process know that we have finished successfully
     return true;
@@ -134,7 +134,7 @@ function Admin_Messages_adminapi_update($args)
     }
 
     // Get the existing admin message
-    $item = pnModAPIFunc('Admin_Messages', 'user', 'get', array('mid' => $args['mid']));
+    $item = ModUtil::apiFunc('Admin_Messages', 'user', 'get', array('mid' => $args['mid']));
 
     if ($item == false) {
         return LogUtil::registerError(__('Sorry! No such item found.', $dom));
@@ -170,11 +170,11 @@ function Admin_Messages_adminapi_update($args)
     }
 
     // New hook functions
-    pnModCallHooks('item', 'update', $args['mid'], array('module' => 'Admin_Messages'));
+    ModUtil::callHooks('item', 'update', $args['mid'], array('module' => 'Admin_Messages'));
 
     // The item has been modified, so we clear all cached pages of this item.
-    $pnRender = & pnRender::getInstance('Admin_Messages');
-    $pnRender->clear_cache(null, pnUserGetVar('uid'));
+    $view = Zikula_View::getInstance('Admin_Messages');
+    $view->clear_cache(null, UserUtil::getVar('uid'));
 
     // Let the calling process know that we have finished successfully
     return true;
@@ -192,13 +192,13 @@ function admin_messages_adminapi_getlinks()
     $links = array();
 
     if (SecurityUtil::checkPermission('Admin_Messages::', '::', ACCESS_READ)) {
-        $links[] = array('url' => pnModURL('Admin_Messages', 'admin', 'view'), 'text' => __('Messages list', $dom));
+        $links[] = array('url' => ModUtil::url('Admin_Messages', 'admin', 'view'), 'text' => __('Messages list', $dom));
     }
     if (SecurityUtil::checkPermission('Admin_Messages::', '::', ACCESS_ADD)) {
-        $links[] = array('url' => pnModURL('Admin_Messages', 'admin', 'new'), 'text' => __('Create new message', $dom));
+        $links[] = array('url' => ModUtil::url('Admin_Messages', 'admin', 'new'), 'text' => __('Create new message', $dom));
     }
     if (SecurityUtil::checkPermission('Admin_Messages::', '::', ACCESS_ADMIN)) {
-        $links[] = array('url' => pnModURL('Admin_Messages', 'admin', 'modifyconfig'), 'text' => __('Settings', $dom));
+        $links[] = array('url' => ModUtil::url('Admin_Messages', 'admin', 'modifyconfig'), 'text' => __('Settings', $dom));
     }
 
     return $links;

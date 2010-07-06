@@ -24,8 +24,8 @@ function Admin_Messages_init()
     }
 
     // Set a default value for a module variable
-    pnModSetVar('Admin_Messages', 'itemsperpage', 25);
-    pnModSetVar('Admin_Messages', 'allowsearchinactive', false);
+    ModUtil::setVar('Admin_Messages', 'itemsperpage', 25);
+    ModUtil::setVar('Admin_Messages', 'allowsearchinactive', false);
 
     // create the default data for the modules module
     Admin_Messages_defaultdata();
@@ -74,7 +74,7 @@ function Admin_Messages_delete()
         return false;
     }
 
-    pnModDelVar('Admin_Messages');
+    ModUtil::delVar('Admin_Messages');
 
     // Deletion successful
     return true;

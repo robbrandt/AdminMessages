@@ -26,11 +26,11 @@ function Admin_Messages_searchapi_options($args)
 {
     if (SecurityUtil::checkPermission('Admin_Messages:search:', '::', ACCESS_READ)) {
         // Create output object
-        $pnRender = & pnRender::getInstance('Admin_Messages');
-        $pnRender->assign(pnModGetVar('Admin_Messages'));
-        $pnRender->assign('active', (isset($args['active']) && isset($args['active']['Admin_Messages'])) || (!isset($args['active'])));
-        $pnRender->assign('activeonly', (isset($args['modvar']) && isset($args['modvar']['Admin_Messages']) && isset($args['modvar']['Admin_Messages']['activeonly']))||!isset($args['modvar']));
-        return $pnRender->fetch('admin_messages_search_options.htm');
+        $view = Zikula_View::getInstance('Admin_Messages');
+        $view->assign(ModUtil::getVar('Admin_Messages'));
+        $view->assign('active', (isset($args['active']) && isset($args['active']['Admin_Messages'])) || (!isset($args['active'])));
+        $view->assign('activeonly', (isset($args['modvar']) && isset($args['modvar']['Admin_Messages']) && isset($args['modvar']['Admin_Messages']['activeonly']))||!isset($args['modvar']));
+        return $view->fetch('admin_messages_search_options.htm');
     }
 
     return '';
@@ -52,8 +52,8 @@ function Admin_Messages_searchapi_search($args)
     }
 
     // get the db and table info
-    pnModDBInfoLoad('Search');
-    $pntable = pnDBGetTables();
+    ModUtil::dbInfoLoad('Search');
+    $pntable = DBUtil::getTables();
     $messagestable = $pntable['message'];
     $messagescolumn = $pntable['message_column'];
     $searchTable = &$pntable['search_result'];
@@ -61,7 +61,7 @@ function Admin_Messages_searchapi_search($args)
 
     // form the where clause
     $where = '';
-    if (!pnModGetVar('Admin_Messages', 'allowsearchinactive') || (isset($args['activeonly']) && (bool)$args['activeonly'])){
+    if (!ModUtil::getVar('Admin_Messages', 'allowsearchinactive') || (isset($args['activeonly']) && (bool)$args['activeonly'])){
         $where .= " $messagescolumn[active] = 1 AND ";
     }
     $where .= " ($messagescolumn[date]+$messagescolumn[expire] > '".time()."' OR $messagescolumn[expire] = 0) AND";
